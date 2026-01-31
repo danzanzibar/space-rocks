@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bb2d49fe-b9bf-43e4-a74e-34cf2a314d24" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/space-rocks.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/game_framework/audio/Sound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/game_framework/audio/SoundManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/game_framework/audio/SoundPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/game_framework/core/Loop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/game_framework/core/ResourceLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/game_framework/core/Updatable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/game_framework/core/Vector2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/game_framework/core/World.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/game_framework/graphics/Animation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/game_framework/graphics/Drawable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/game_framework/graphics/DrawingPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/game_framework/graphics/OneShotAnimation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/game_framework/graphics/Renderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/game_framework/graphics/Sprite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/game_framework/graphics/SpriteSheet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/game_framework/input/KeyBindable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/game_framework/input/KeyBindings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/GameUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/GameUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/Launcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/SpaceRocksApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/SpaceRocksKeyBindings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/SpaceRocksWorld.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/entities/Asteroid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/entities/AsteroidManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/entities/CollisionEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/entities/CollisionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/entities/Entity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/entities/EntityManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/entities/Explosion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/entities/Laser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/entities/LaserManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/entities/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/entities/UFO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/entities/UFOCollisionAvoidance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/entities/UFOManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/game_states/DemoState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/game_states/GameOverState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/game_states/GameState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/game_states/PausedState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/game_states/RunningState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/spatial/Background.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/spatial/Cell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/space_rocks/spatial/Grid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/steering/BlendedBehaviour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/steering/Kinematic2D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/steering/Steering2D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/steering/SteeringUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/steering/WeightedBehaviour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/steering/behaviours/Align.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/steering/behaviours/Arrive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/steering/behaviours/Face.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/steering/behaviours/SingleTargetSteeringBehaviour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/steering/behaviours/SteeringBehaviour.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/steering/behaviours/Wander.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/steering/behaviours/toroidal/ToroidalArrive.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="37VKBTB4LwIPembFsEkswroQ5PJ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Launch.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Launcher.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/zan/sync/school/comp452/space-rocks&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/zan/sync/school/comp452/swingtest/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2575897&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/java/io/github/danzanzibar/app" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="io.github.danzanzibar.space_rocks" />
+      <recent name="io.github.danzanzibar.game_framework.input" />
+      <recent name="io.github.danzanzibar.space_rocks.input" />
+      <recent name="io.github.danzanzibar.game.core" />
+      <recent name="io.github.danzanzibar.game.graphics" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Launch" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="io.github.danzanzibar.space_rocks.Launcher" />
+      <module name="space-rocks" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.138" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.29346.138" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bb2d49fe-b9bf-43e4-a74e-34cf2a314d24" name="Changes" comment="" />
+      <created>1766982664731</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1766982664731</updated>
+      <workItem from="1766982665784" duration="135000" />
+      <workItem from="1766982809683" duration="1970000" />
+      <workItem from="1767052672907" duration="688000" />
+      <workItem from="1767063376200" duration="10098000" />
+      <workItem from="1767215726666" duration="21000" />
+      <workItem from="1767215777492" duration="1386000" />
+      <workItem from="1767231889300" duration="6251000" />
+      <workItem from="1767325386127" duration="832000" />
+      <workItem from="1767326226332" duration="125000" />
+      <workItem from="1767326351949" duration="12000" />
+      <workItem from="1767326371876" duration="631000" />
+      <workItem from="1767327011938" duration="4548000" />
+      <workItem from="1767410533991" duration="3984000" />
+      <workItem from="1767456710771" duration="11055000" />
+      <workItem from="1767490348916" duration="28000" />
+      <workItem from="1767490406653" duration="987000" />
+      <workItem from="1767496344472" duration="104000" />
+      <workItem from="1767497015412" duration="7924000" />
+      <workItem from="1767506567786" duration="1020000" />
+      <workItem from="1767583983967" duration="1630000" />
+      <workItem from="1767639491416" duration="177000" />
+      <workItem from="1767649255139" duration="3509000" />
+      <workItem from="1767761085398" duration="2597000" />
+      <workItem from="1767846368603" duration="3219000" />
+      <workItem from="1767908751251" duration="49000" />
+      <workItem from="1767908811912" duration="5464000" />
+      <workItem from="1767976671897" duration="81000" />
+      <workItem from="1767976770395" duration="5734000" />
+      <workItem from="1768009051811" duration="5772000" />
+      <workItem from="1768058825505" duration="13772000" />
+      <workItem from="1768145445966" duration="20426000" />
+      <workItem from="1768269126896" duration="8961000" />
+      <workItem from="1768325216705" duration="84000" />
+      <workItem from="1768325366854" duration="40000" />
+      <workItem from="1768325416438" duration="81000" />
+      <workItem from="1768325553674" duration="12214000" />
+      <workItem from="1768360866822" duration="5215000" />
+      <workItem from="1768369357327" duration="17093000" />
+      <workItem from="1768436666009" duration="11131000" />
+      <workItem from="1768488226948" duration="16927000" />
+      <workItem from="1768682144757" duration="135000" />
+      <workItem from="1768698984728" duration="23258000" />
+      <workItem from="1768782856821" duration="11775000" />
+      <workItem from="1768836400516" duration="12495000" />
+      <workItem from="1768931340148" duration="14731000" />
+      <workItem from="1769025142917" duration="11113000" />
+      <workItem from="1769043237846" duration="9048000" />
+      <workItem from="1769098955115" duration="10491000" />
+      <workItem from="1769142154026" duration="65000" />
+      <workItem from="1769142260541" duration="116000" />
+      <workItem from="1769142460855" duration="1289000" />
+      <workItem from="1769144004016" duration="615000" />
+      <workItem from="1769214560155" duration="4386000" />
+      <workItem from="1769269085358" duration="28030000" />
+      <workItem from="1769313596493" duration="191000" />
+      <workItem from="1769361891613" duration="1138000" />
+      <workItem from="1769375582979" duration="3317000" />
+      <workItem from="1769453683297" duration="11843000" />
+      <workItem from="1769475808969" duration="85000" />
+      <workItem from="1769475912579" duration="10092000" />
+      <workItem from="1769565829440" duration="4730000" />
+      <workItem from="1769572929583" duration="3039000" />
+      <workItem from="1769741356154" duration="2276000" />
+      <workItem from="1769747341833" duration="1271000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
