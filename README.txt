@@ -53,11 +53,11 @@ for me, though, and I wanted to learn as much as possible. I had never (1) built
 with Java, (2) really completed any game before, (3) used Swing or AWT, or (4) built a OOP
 program of this size. Because I knew that I would need to make several games for this
 course, I wanted to build some framework objects that would prove reusable. I quickly
-reaslised that I would want to utilize a spatial partitioning scheme (also a first for me)
+realised that I would want to utilize a spatial partitioning scheme (also a first for me)
 to institute collision checking and avoidance "the right way". Once the game was
 functional, I also wanted to learn more about OOP patterns so broke into the book "Design
 Patterns" for the first time and spent A LOT of time refactoring this code for flexibility
-and resuse. On the whole, I think the slight proliferation of classes is well justified by
+and reuse. On the whole, I think the slight proliferation of classes is well justified by
 the clearly communicated intent they have brought.
 
 I hope this will make it easier to judge whether this meets the assignment's
@@ -69,12 +69,12 @@ in the source code.
    game_framework:
 
    This package contains classes I have made with the clear intention of reusing
-   throughout this course. It is made up of four subpackages.
+   throughout this course. It is made up of four sub packages.
 
        "audio":
 
        This package contains three class that provide basic capabilities. The most
-       signifant choice here was to have a 'SoundPool' class that holds multiple instances
+       significant choice here was to have a 'SoundPool' class that holds multiple instances
        of 'Sound', as I found I needed laser noises or explosions to be able to happen in
        quick succession.
 
@@ -120,7 +120,7 @@ in the source code.
 
        "behaviours":
 
-       This subpackage has all the actual behaviours. 'SteeringBehaviour' and its
+       This sub package has all the actual behaviours. 'SteeringBehaviour' and its
        subclass, 'SingleTargetSteeringBehaviour' provide abstract classes for the rest of
        the behaviours to subclass. In coding all the behaviours from the text, there was
        also a multi target abstract class but I have removed all unnecessary classes from
@@ -138,7 +138,7 @@ in the source code.
 
    "space_rocks":
 
-   This is the main package of the game and contains three subpackages. The only classes
+   This is the main package of the game and contains three sub packages. The only classes
    in this package are the Enum class for key bindings, a very simple 'Launcher',
    'SpaceRocksApp', and 'SpaceRocksWorld'. The app class creates the main Swing panes, the
    world, the UI, and wires up the world to it's 'Renderer' target, a 'DrawingPanel'. It
@@ -157,7 +157,7 @@ in the source code.
 
        "entities":
 
-       This is the largets package and and has three abstract base classes: 'Entity',
+       This is the largest package and and has three abstract base classes: 'Entity',
        'CollisionEntity' (a subclass of 'Entity'), and 'EntityManager'. The last two are
        quite simple: 'CollisionEntity' simply adds collision checking and 'EntityManager'
        holds a list of entities, a reference to the 'Grid' (more below), and has some
@@ -167,8 +167,8 @@ in the source code.
        I would decouple the 'Drawable' from the entity and simply hold an ID for some
        separate 'DrawableManager' to deal with. As it is, though, Entity is also a
        'Drawable' and performs transforms to put it in the correct position and
-       orientation before defering to the enclosed drawable to draw the image. It also
-       handles updating (though is overriden by some uniqe entities like lasers that have
+       orientation before deferring to the enclosed drawable to draw the image. It also
+       handles updating (though is overridden by some unique entities like lasers that have
        a limited life).
 
        The 'CollisionManager', a subclass of 'EntityManager' is a bit of an oddball. It
@@ -178,10 +178,10 @@ in the source code.
 
        "spatial":
 
-       The last subpackage is dedicated to spatial partitioning (well, the 'Background'
+       The last sub package is dedicated to spatial partitioning (well, the 'Background'
        class is also thrown in for want of a better home). As recommended by the text, I
        read up on "Real Time Collision Detection" and implemented a fairly simple (yet
-       likely far from optimized) grid partitioning of userspace. The performance
+       likely far from optimized) grid partitioning of user space. The performance
        improvement was massive and more than adequate for the game. 'Grid' and 'Cell'
        implement this scheme - you can find more information about the algorithms in the
        'Grid' class.
@@ -195,3 +195,28 @@ it is increased beyond what it is set to, you will notice weird background patch
 are loaded. It wasn't deemed important enough to fix this as the game should not be
 resized... and to fix this and handle all kinds of window sizes would justify a whole
 display manager. It could be a lot.
+
+
+A notes on ... notes:
+
+I started learning programming about three years ago. I was making
+good progress on my own for close to a year when I decided to utilize
+a half finished math degree and enroll in TRU's fully online CompSci
+degree. Since then I have continued to learn on my own and completed
+about 10 courses despite having a full time job, wife, and kids.
+
+Most - if not all - of my instructors offer essentially zero feedback on
+assignments beyond a grade. This has been a great disappointment as my
+primary reason for paying for these courses is to get feedback from
+professors who know a lot more than I do. I work very hard on this and
+believe I have a knack for it... but I am not an experienced developer
+and am almost always doing something for the first time.
+
+The point of this is simply to ask for and encourage any critical
+feedback you can give me. I have not taken a class with you before and
+I do not want to prejudge, but am I very excited to be doing this
+course. I want to build indie games and game AI is without a doubt the
+area that most interests me. I would very much appreciate any and all
+criticism you can provide on my programs throughout this course. Thank
+you in advance for helping me to learn as much as possible!
+
