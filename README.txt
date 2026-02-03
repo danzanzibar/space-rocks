@@ -19,7 +19,7 @@ How to build and run:
 
 This project uses the Intellij build system and UI Designer (for the game's UI) and must
 be built in the Intellij-IDEA IDE. A jar is included in the root directory
-(space_rocks.jar) that can be run using 'java -jar space_rocks.jar'.
+(space-rocks.jar) that can be run using 'java -jar space-rocks.jar'.
 
 
 Steering behaviours:
