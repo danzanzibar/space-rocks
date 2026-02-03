@@ -8,11 +8,11 @@ About the game:
 This game is inspired by 2D space games I played as a child in the 90s such as (cough)
 Asteroids, Maelstrom, and Escape Velocity. Unlike many of these games, you are not
 destroying asteroids with your lasers, but rather the point of the game is to kill UFOs
-and that are equally trying to kill you.
+that are equally trying to kill you.
 
 The game world is toroidal so you can never reach the edge of space. The background nebula
 does not move at the same pace as the player to give a sense of parallax. I hope these add
-to a sense of truly drifting in the void.
+to a feeling of truly drifting in the void.
 
 
 How to build and run:
@@ -27,49 +27,50 @@ Steering behaviours:
 This game has 3 primary game entities: the player (a spaceship), asteroids, and UFOs. The
 player and asteroids have a kinematic model but have simplified steering behavious. The
 player may receive an acceleration in the forward direction and turns at a constant
-angular speed. The asteroids simply have a constant velocity (linear and angular) and
-float through space. Only the UFOs exhibit complex steering behaviours.
+angular speed based on querying the input system. The asteroids simply have a constant
+velocity (linear and angular) and float through space. Only the UFOs exhibit complex
+steering behaviours.
 
 The UFO will by default perform a weights-blended wandering behaviour that incorporates a
 collision avoidance system. The "Wander" behaviour is the more complex algorithm outlined
 in the textbook that relies upon "Face", which in turn relies upon "Align". The collision
-avoidance system lets the UFOs avoid both asteroids and other UFOs. When the UFO comes
-within range of the player, it goes into attack mode (note the audible queue) and will
-attempt to crash into the player. It changes to a modified "Arrive" behaviour that is
-still weighted with collision avoidance but with a stronger focus on "Arrive". The
-collision avoidance will now only target asteroids as clearly the UFOs believe crashing
-UFOs isn't that bad so long as the player dies.
+avoidance system lets the UFOs avoid both asteroids and other UFOs and relies on a spatial
+partitioning to minimize the number of pairwise checks needed (also used for collision
+checking). When the UFO comes within range of the player, it goes into attack mode (note
+the audible indicator) and will attempt to crash into the player. It changes to a modified
+"Arrive" behaviour that is still weighted with collision avoidance but with a stronger
+focus on "Arrive". This behaviour has been modified to properly handle the edges of a
+toroidal world. When attacking, collision avoidance will only target asteroids as clearly
+the UFOs believe crashing UFOs isn't a problem so long as the player dies.
 
 The wandering behaviour can be observed when the game launches as it fills the game world
-with asteroids and UFOs to watch until a new game is started. The observe the attack
-behaviour, though, the user must brave the void and test their skills against the hordes
-of alien kamikazes (a hair dramatic, perhaps).
+with asteroids and UFOs until a new game is started. To observe the attack behaviour,
+though, the user must brave the void and test their skills against the hordes of alien
+kamikazes (a hair dramatic, perhaps).
 
 
 Game Design:
 
 On the whole, I may have gone a little overboard on this game. There was a lot of "firsts"
 for me, though, and I wanted to learn as much as possible. I had never (1) built a GUI
-with Java, (2) really completed any game before, (3) used Swing or AWT, or (4) built a OOP
-program of this size. Because I knew that I would need to make several games for this
-course, I wanted to build some framework objects that would prove reusable. I quickly
-realised that I would want to utilize a spatial partitioning scheme (also a first for me)
-to institute collision checking and avoidance "the right way". Once the game was
-functional, I also wanted to learn more about OOP patterns so broke into the book "Design
-Patterns" for the first time and spent A LOT of time refactoring this code for flexibility
-and reuse. On the whole, I think the slight proliferation of classes is well justified by
-the clearly communicated intent they have brought.
+with Java, (2) really completed any game before, (3) used Swing or AWT, (4) built a OOP
+program of this size, or (5) implemented a spatial partitioning scheme. Because I knew
+that I would need to make several games for this course, I wanted to build some framework
+objects that would prove reusable. I quickly realised that I would want to utilize a
+spatial partitioning scheme to institute collision checking and avoidance "the right
+way". Once the game was functional, I also wanted to learn more about OOP patterns so I
+broke into the book "Design Patterns" for the first time and spent A LOT of time
+refactoring this code for flexibility and reuse. On the whole, I think the slight
+proliferation of classes is well justified by the clearly communicated intent they now have.
 
-I hope this will make it easier to judge whether this meets the assignment's
-requirements. It certainly does have the effect of making for a long design document so I
-have organized it as cleanly as possible below - the same as I have organized the packages
-in the source code.
+I have organized this design document to follow the packaging stucture of the source code.
 
 
    game_framework:
 
    This package contains classes I have made with the clear intention of reusing
-   throughout this course. It is made up of four sub packages.
+   throughout this course although it is still to be seen how reusable it will prove to
+   be. It is made up of four sub packages.
 
        "audio":
 
@@ -88,15 +89,15 @@ in the source code.
 
        A 'World' object was also defined that allows registering 'Renderer's from the
        graphics package. Basically, this forces rendering to follow updates. While a
-       simple and effective interface for the games in this course, I do not really like
-       that I coupled updating the rendering so tightly... but it's fairly transparent and
+       simple and effective interface for this game, I do not really like that I coupled
+       updating the rendering so tightly to updating... but it's fairly transparent and
        easy to use.
 
        "graphics":
 
        This package provides many useful classes. There is the 'Renderer' interface that
        works with the 'World' class and an implementation of it in 'DrawingPanel'. This
-       subclass of 'JPanel' make manually drawing easy to wire into any game.
+       subclass of 'JPanel' make manually drawing easy to wire into the game.
 
        The rest of the classes revolve around displaying images using Swing. 'Sprite',
        'Animation', and 'OneShotAnimation' are the key classes for drawing actual entities
@@ -132,7 +133,7 @@ in the source code.
 
        I decided to implement complex steering behaviours using composition over
        inheritance. A delegated-to behaviour is created with a zero-valued target and the
-       important kinematic field is set as needed in the course of the delegating
+       important kinematic fields are set as needed in the course of the delegating
        behaviour's algorithm. On the whole, I feel this has made for a simple design and
        interface.
 
@@ -167,9 +168,9 @@ in the source code.
        I would decouple the 'Drawable' from the entity and simply hold an ID for some
        separate 'DrawableManager' to deal with. As it is, though, Entity is also a
        'Drawable' and performs transforms to put it in the correct position and
-       orientation before deferring to the enclosed drawable to draw the image. It also
-       handles updating (though is overridden by some unique entities like lasers that have
-       a limited life).
+       orientation before deferring to the enclosed drawable to draw the image. It
+       provides a 'update(dt)' method that is overridden by some entities like lasers that
+       have a limited life.
 
        The 'CollisionManager', a subclass of 'EntityManager' is a bit of an oddball. It
        serves two purposes: it's a manager class for 'Explosion's and does collision
@@ -178,45 +179,40 @@ in the source code.
 
        "spatial":
 
-       The last sub package is dedicated to spatial partitioning (well, the 'Background'
-       class is also thrown in for want of a better home). As recommended by the text, I
-       read up on "Real Time Collision Detection" and implemented a fairly simple (yet
-       likely far from optimized) grid partitioning of user space. The performance
-       improvement was massive and more than adequate for the game. 'Grid' and 'Cell'
-       implement this scheme - you can find more information about the algorithms in the
-       'Grid' class.
+       The last sub package is dedicated to spatial partitioning (the 'Background' class
+       is also thrown in for want of a better home). As recommended by the text, I read up
+       on "Real Time Collision Detection" and implemented a fairly simple (yet likely far
+       from optimized) grid partitioning of user space. The performance improvement was
+       massive and more than adequate for the game. 'Grid' and 'Cell' implement this
+       scheme - you can find more information about the algorithms in the 'Grid' class.
    
 
 Bugs:
 
-The window doesn't want to be resized. Currently, it can handle some resizing and keep the
-player in the middle of the screen without changing the aspect ratio of the game. But if
-it is increased beyond what it is set to, you will notice weird background patches that
-are loaded. It wasn't deemed important enough to fix this as the game should not be
-resized... and to fix this and handle all kinds of window sizes would justify a whole
+The window doesn't want to be resized. Currently, it can handle some resizing while
+keeping the player in the middle of the screen without changing the aspect ratio of the
+game. But if it is increased beyond what it is set to, you will notice weird background
+patches being drawn. It wasn't deemed important enough to fix this as the game should not
+be resized... and to fix this and handle all kinds of window sizes would justify a whole
 display manager. It could be a lot.
 
 
 A notes on ... notes:
 
-I started learning programming about three years ago. I was making
-good progress on my own for close to a year when I decided to utilize
-a half finished math degree and enroll in TRU's fully online CompSci
-degree. Since then I have continued to learn on my own and completed
-about 10 courses despite having a full time job, wife, and kids.
+I started learning programming about three years ago. I was making good progress on my own
+for close to a year when I decided to utilize a half finished math degree and enroll in
+TRU's fully online CompSci degree. Since then I have continued to learn on my own and
+completed about 10 courses despite having a full time job, wife, and kids.
 
-Most - if not all - of my instructors offer essentially zero feedback on
-assignments beyond a grade. This has been a great disappointment as my
-primary reason for paying for these courses is to get feedback from
-professors who know a lot more than I do. I work very hard on this and
-believe I have a knack for it... but I am not an experienced developer
-and am almost always doing something for the first time.
+Most - if not all - of my instructors offer essentially zero feedback on assignments
+beyond a grade. This has been a great disappointment as my primary reason for paying for
+these courses is to get feedback from professors who know a lot more than I do. I work
+very hard on this and believe I have a knack for it... but I am not an experienced
+developer and am almost always doing something for the first time.
 
-The point of this is simply to ask for and encourage any critical
-feedback you can give me. I have not taken a class with you before and
-I do not want to prejudge, but am I very excited to be doing this
-course. I want to build indie games and game AI is without a doubt the
-area that most interests me. I would very much appreciate any and all
-criticism you can provide on my programs throughout this course. Thank
-you in advance for helping me to learn as much as possible!
+The point of this is simply to ask for and encourage any critical feedback you can give
+me. I should also mention how excited to be doing this course. I want to build indie games
+and game AI is without a doubt the area that most interests me. I would very much
+appreciate any and all criticism you can provide on my programs throughout this
+course. Thank you in advance for helping me to learn as much as possible!
 
